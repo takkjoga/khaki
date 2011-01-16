@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:khaki="jp.takkjoga.khaki.components.*" initialize="init()" layout="absolute">
+    <mx:Script>
+        <![CDATA[
+            import jp.takkjoga.khaki.Data;
+            private function init():void
+            {
+                Data.instance;
+            }
+        ]]>
+    </mx:Script>
+    <khaki:MainCanvas id="mainCanvas" width="100%" height="100%" backgroundColor="#cccccc" />
+</mx:WindowedApplication>

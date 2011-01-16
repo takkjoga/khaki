@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()" label="method">
+    <mx:Script>
+        <![CDATA[
+            private function init():void {
+            }
+        ]]>
+    </mx:Script>
+    <mx:Label text="method:" />
+    <mx:TextInput id="methodName" />
+</mx:VBox>

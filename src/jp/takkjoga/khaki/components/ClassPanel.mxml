@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+    <mx:Script>
+        <![CDATA[
+            import flash.events.*;
+
+            private function init():void {
+                this.addEventListener(MouseEvent.MOUSE_DOWN, onStartDrag);
+                this.addEventListener(MouseEvent.MOUSE_UP, onStopDrag);
+            }
+
+            private function onStartDrag(event:MouseEvent):void {
+                this.startDrag();
+            }
+
+            private function onStopDrag(event:MouseEvent):void {
+                this.stopDrag();
+            }
+        ]]>
+    </mx:Script>
+</mx:Panel>

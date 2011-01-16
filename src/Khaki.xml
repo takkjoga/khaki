@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://ns.adobe.com/air/application/2.5">
+    <id>jp.takkjoga.khaki</id>
+    <versionNumber>0.0.1</versionNumber>
+    <filename>Khaki</filename>
+    <initialWindow>
+        <content>Khaki.swf</content>
+        <visible>true</visible>
+        <systemChrome>standard</systemChrome>
+        <width>600</width>
+        <height>600</height>
+    </initialWindow>
+</application>

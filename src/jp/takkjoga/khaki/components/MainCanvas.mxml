@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+    <mx:Script>
+        <![CDATA[
+            import flash.events.*;
+            import flash.ui.ContextMenu;
+            import flash.ui.ContextMenuItem;
+            import mx.managers.PopUpManager;
+            import mx.events.*;
+            import jp.takkjoga.khaki.events.*;
+            import jp.takkjoga.khaki.components.*;
+
+            private function init():void {
+                var editContextMenu:ContextMenu = new ContextMenu();
+                editContextMenu.hideBuiltInItems();
+
+                var addClassMenu:ContextMenuItem = new ContextMenuItem("add class");
+                addClassMenu.addEventListener(flash.events.ContextMenuEvent.MENU_ITEM_SELECT, onMenuItemSelectForAddClass);
+                editContextMenu.customItems.push(addClassMenu);
+
+                this.contextMenu = editContextMenu;
+            }
+
+            private function onMenuItemSelectForAddClass(event:ContextMenuEvent):void {
+                var popupWindow:EditClassWindow = new EditClassWindow();
+                popupWindow.addEventListener(PopUpCloseEvent.POP_UP_CLOSE, onClosePopupWindow);
+                PopUpManager.addPopUp(popupWindow, this);
+                PopUpManager.centerPopUp(popupWindow);
+            }
+
+            private function onClosePopupWindow(event:PopUpCloseEvent):void {
+                var popupWindow:EditClassWindow = event.currentTarget as EditClassWindow;
+
+                var classPanel:ClassPanel = new ClassPanel();
+                classPanel.title = popupWindow.titleText.text;
+                addChild(classPanel);
+            }
+        ]]>
+    </mx:Script>
+</mx:Canvas>
